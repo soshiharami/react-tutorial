@@ -25,7 +25,7 @@ export default class extends React.Component<IProps, IState> {
         const { todos, text } = this.state;
         return (
             <div style={{ width: '500px', margin: '0 auto' }}>
-                <h1>TODO LIST</h1>
+                <h1>TODO LISTOOOOOOOOOOOOOOOOO</h1>
                 <input type="text" value={text} onChange={this.onTextChange} />
                 <button onClick={this.onClickAddButton}>Add Todo</button>
                 <ul>
