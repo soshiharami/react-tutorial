@@ -27,7 +27,7 @@ export default class extends React.Component<IProps, IState> {
         return (
             <div style={{ width: '500px', margin: '0 auto' }}>
                 <h1>TODO LISTOOOOOOOOOOOOOOOOO</h1>
-                <input type="text" value={text} onChange={this.onTextChange} />
+                <input type="text" value={text} onChange={this.onTextChange} onKeyDown={this.onEnter}/>
                 <button onClick={this.onClickAddButton}>Add Todo</button>
                 <ul>
                     {todos.map((todo, i) => (
@@ -52,4 +52,15 @@ export default class extends React.Component<IProps, IState> {
             todos: todos.concat([text])
         });
     };
+
+    private  onEnter = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter"){
+            const { text, todos } = this.state;
+            this.setState({
+                text: "",
+                todos: todos.concat([text])
+            });
+        }
+
+    }
 }
