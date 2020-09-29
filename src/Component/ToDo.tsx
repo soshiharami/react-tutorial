@@ -11,6 +11,7 @@ interface IState {
 
 /* tslint:disable:jsx-no-lambda */
 export default class extends React.Component<IProps, IState> {
+
     constructor(props: IProps) {
         super(props);
 
@@ -47,6 +48,7 @@ export default class extends React.Component<IProps, IState> {
     private onClickAddButton = () => {
         const { text, todos } = this.state;
         this.setState({
+            text: "",
             todos: todos.concat([text])
         });
     };
